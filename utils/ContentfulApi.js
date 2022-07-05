@@ -49,7 +49,6 @@ export default class ContentfulApi {
             id
           }
           title
-          description
           slug
           body {
             json
@@ -120,7 +119,7 @@ export default class ContentfulApi {
     const variables = { limit: queryLimit, skip };
 
     const query = `query GetPaginatedSlugs($limit: Int!, $skip: Int!) {
-        blogPostCollection(limit: $limit, skip: $skip, order: date_DESC) {
+        blogPostCollection(limit: $limit, skip: $skip) {
           total
           items {
             slug
@@ -193,33 +192,26 @@ export default class ContentfulApi {
     const variables = { limit: queryLimit, skip };
 
     const query = `query GetPaginatedBlogPosts($limit: Int!, $skip: Int!) {
-        blogPostCollection(limit: $limit, skip: $skip, order: date_DESC) {
+        blogPostCollection(limit: $limit, skip: $skip) {
           total
           items {
             sys {
               id
             }
-            date
-            title
-            slug
-            excerpt
-            tags
-            externalUrl
-            author {
-              name
+            headerImage {
+              url
+              title
+              width
+              height
               description
-              twitchUsername
-              twitterUsername
-              gitHubUsername
-              websiteUrl
-              image {
-                url
-                title
-                width
-                height
-                description
-              }
             }
+            title
+            timeline
+            tools
+            teammates
+            slug
+            category
+            excerpt
             body {
               json
               links {
@@ -345,27 +337,20 @@ export default class ContentfulApi {
           sys {
             id
           }
-          date
-          title
-          slug
-          excerpt
-          tags
-          externalUrl
-          author {
-            name
+          headerImage {
+            url
+            title
+            width
+            height
             description
-            twitchUsername
-            twitterUsername
-            gitHubUsername
-            websiteUrl
-            image {
-              url
-              title
-              width
-              height
-              description
-            }
           }
+          title
+          timeline
+          tools
+          teammates
+          slug
+          category
+          excerpt
           body {
             json
             links {
@@ -452,17 +437,26 @@ export default class ContentfulApi {
     const variables = { limit: Config.pagination.pageSize, skip };
 
     const query = `query GetPaginatedPostSummaries($limit: Int!, $skip: Int!) {
-        blogPostCollection(limit: $limit, skip: $skip, order: date_DESC) {
+        blogPostCollection(limit: $limit, skip: $skip) {
           total
           items {
             sys {
               id
             }
-            date
+            headerImage {
+              url
+              title
+              width
+              height
+              description
+            }
             title
+            timeline
+            tools
+            teammates
             slug
+            category
             excerpt
-            tags
           }
         }
       }`;
@@ -489,16 +483,23 @@ export default class ContentfulApi {
   static async getRecentPostList() {
     const variables = { limit: Config.pagination.recentPostsSize };
     const query = `query GetRecentPostList($limit: Int!) {
-      blogPostCollection(limit: $limit, order: date_DESC) {
+      blogPostCollection(limit: $limit) {
         items {
           sys {
             id
           }
-          date
+          headerImage {
+            url
+            title
+            width
+            height
+            description
+          }
           title
+          
           slug
+          category
           excerpt
-          tags
         }
       }
     }`;

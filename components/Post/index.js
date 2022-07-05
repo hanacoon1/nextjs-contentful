@@ -1,22 +1,29 @@
+import Image from "next/image";
 import RichTextPageContentStyles from "@styles/RichTextPageContent.module.css";
 import TypographyStyles from "@styles/Typography.module.css";
-import Tags from "@components/Post/Tags";
-import PublishedDate from "@components/Post/PublishedDate";
-import Author from "@components/Post/Author";
-import ExternalUrl from "@components/Post/ExternalUrl";
 import RichTextPageContent from "@components/RichTextPageContent";
+import Details from "@components/Post/Details";
 
 export default function Post(props) {
   const { post } = props;
 
   return (
     <article className={RichTextPageContentStyles.page}>
-      {post.externalUrl && <ExternalUrl url={post.externalUrl} />}
-      <PublishedDate date={post.date} />
-      {post.tags !== null && <Tags tags={post.tags} />}
       <h1 className={TypographyStyles.heading__h1}>{post.title}</h1>
+      <h2 className={TypographyStyles.heading__h2}>{post.category}</h2>
+      <p> {post.excerpt}</p>
+      <Image
+        src={post.headerImage.url}
+        alt={post.headerImage.description}
+        height={post.headerImage.height}
+        width={post.headerImage.width}
+      />
+      <Details
+        timeline={post.timeline}
+        tools={post.tools}
+        teammates={post.teammates}
+      />
       <RichTextPageContent richTextBodyField={post.body} renderH2Links={true} />
-      {post.author !== null && <Author author={post.author} />}
     </article>
   );
 }
