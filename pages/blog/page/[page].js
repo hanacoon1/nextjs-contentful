@@ -6,7 +6,6 @@ import RichTextPageContent from "@components/RichTextPageContent";
 import MainLayout from "@layouts/main";
 import ContentWrapper from "@components/ContentWrapper";
 import PageContentWrapper from "@components/PageContentWrapper";
-import HeroBanner from "@components/HeroBanner";
 
 export default function BlogIndexPage(props) {
   const {
@@ -33,10 +32,6 @@ export default function BlogIndexPage(props) {
         description={pageDescription}
         url={`${Config.pageMeta.blogIndex.url}/page/${currentPage}`}
       />
-
-      {pageContent.heroBanner !== null && (
-        <HeroBanner data={pageContent.heroBanner} />
-      )}
 
       <ContentWrapper>
         {pageContent.body && (

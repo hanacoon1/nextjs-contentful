@@ -16,10 +16,10 @@ export default css.global`
     --font-weight-normal: 400;
     --font-weight-bold: 700;
 
-    --font-family-heading: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    --font-family-heading: "Libre Franklin", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
       Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
       "Segoe UI Symbol";
-    --font-family-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    --font-family-body: "Libre Franklin", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
       Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
       "Segoe UI Symbol";
     --font-family-code: Consolas, Monaco, "Andale Mono", "Ubuntu Mono",

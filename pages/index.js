@@ -4,9 +4,9 @@ import ContentfulApi from "@utils/ContentfulApi";
 import RichTextPageContent from "@components/RichTextPageContent";
 import MainLayout from "@layouts/main";
 import RecentPostList from "@components/RecentPostList";
-import HeroBanner from "@components/HeroBanner";
 import ContentWrapper from "@components/ContentWrapper";
 import PageContentWrapper from "@components/PageContentWrapper";
+import Work from "@components/Work";
 
 export default function Home(props) {
   const { pageContent, recentPosts, preview } = props;
@@ -26,16 +26,13 @@ export default function Home(props) {
           url={Config.pageMeta.home.url}
         />
 
-        {pageContent && pageContent.heroBanner !== null && (
-          <HeroBanner data={pageContent.heroBanner} />
-        )}
-
         <ContentWrapper>
           {pageContent && pageContent.body && (
             <PageContentWrapper>
               <RichTextPageContent richTextBodyField={pageContent.body} />
             </PageContentWrapper>
           )}
+          <Work></Work>
           <RecentPostList posts={recentPosts} />
         </ContentWrapper>
       </MainLayout>

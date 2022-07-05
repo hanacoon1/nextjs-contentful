@@ -7,7 +7,6 @@
   display: flex;
   justify-content: center;
   background-color: var(--color-foreground);
-  padding: 1rem;
 }
 
 .header__logoContainerLink {
