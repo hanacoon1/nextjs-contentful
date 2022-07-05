@@ -1,9 +1,7 @@
 import HeaderStyles from "@styles/Header.module.css";
 import Link from "next/link";
-import SocialLinks from "@components/SocialLinks";
 import { useRouter } from "next/router";
 import { Config } from "@utils/Config";
-import Logo from "./svg/Logo";
 
 export default function Header() {
   const router = useRouter();
@@ -16,7 +14,6 @@ export default function Header() {
             className={HeaderStyles.header__logoContainerLink}
             aria-label="Navigate to home page"
           >
-            <Logo />
           </a>
         </Link>
       </div>
@@ -52,7 +49,6 @@ export default function Header() {
           })}
         </ul>
       </nav>
-      <SocialLinks />
     </header>
   );
 }

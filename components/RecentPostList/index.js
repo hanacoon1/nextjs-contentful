@@ -11,7 +11,7 @@ export default function RecentPostList(props) {
   return (
     <>
       <h2 className={RecentPostListStyles.recentPostList__header}>
-        Recent articles
+        Work
       </h2>
       <ol className={ContentListStyles.contentList}>
         {posts.map((post) => (

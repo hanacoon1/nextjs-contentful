@@ -47,17 +47,17 @@ export const Config = {
     },
   },
   pagination: {
-    pageSize: 2,
-    recentPostsSize: 3,
+    pageSize: 3,
+    recentPostsSize: 6,
   },
   menuLinks: [
     {
       displayName: "Home",
       path: "/",
     },
-    {
-      displayName: "Blog",
-      path: "/blog",
-    },
+    //{
+      ///displayName: "Blog",
+      ///path: "/blog",
+    ///},
   ],
 };

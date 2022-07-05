@@ -6,7 +6,6 @@ import MainLayout from "@layouts/main";
 import RecentPostList from "@components/RecentPostList";
 import ContentWrapper from "@components/ContentWrapper";
 import PageContentWrapper from "@components/PageContentWrapper";
-import Work from "@components/Work";
 
 export default function Home(props) {
   const { pageContent, recentPosts, preview } = props;
@@ -32,7 +31,6 @@ export default function Home(props) {
               <RichTextPageContent richTextBodyField={pageContent.body} />
             </PageContentWrapper>
           )}
-          <Work></Work>
           <RecentPostList posts={recentPosts} />
         </ContentWrapper>
       </MainLayout>
